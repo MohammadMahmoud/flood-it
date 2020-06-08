@@ -59,9 +59,8 @@ Using In-House created MERN framework that built by me (still work in progress).
   - Progress in game when user send color it will send back the reflected changes in the gird
   - Solve the game based on Recursive DFS Algorithm
 
-## Running
 
-### Endpoints
+## Endpoints
 
 ```Javascript
 // Front-End http://localhost:3000
@@ -82,7 +81,7 @@ Progress the game with chosen color in the request body, it replay with the next
 //GET api/game/:id/solve
 Solve the game with game id, it send back the with right color cells
 ```
-
+## Running
 ### Clone Repository
 
 ```shell
