@@ -71,12 +71,12 @@ const Layout = () => {
   };
 
   const handleChooseColor = (color: string, player?: boolean) => {
-    if (player) {
-      setPlayerMoves([...playerMoves, color]);
-    }
     setLastChosenColor(color);
     if (color === lastChosenColor) {
       return false;
+    }
+    if (player) {
+      setPlayerMoves([...playerMoves, color]);
     }
     if (playerTurns >= solvedTurns) {
       window.alert(

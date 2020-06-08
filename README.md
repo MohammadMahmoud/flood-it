@@ -61,6 +61,28 @@ Using In-House created MERN framework that built by me (still work in progress).
 
 ## Running
 
+### Endpoints
+
+```Javascript
+// Front-End http://localhost:3000
+The UI of the game
+```
+
+```Javascript
+// GET http://localhost:3001/api/game
+To get a new game and it send the grid of the game
+```
+
+```Javascript
+// PUT http://localhost:3001/api/game with requested color in the request body
+Progress the game with chosen color in the request body, it replay with the next grid
+```
+
+```Javascript
+//GET api/game/:id/solve
+Solve the game with game id, it send back the with right color cells
+```
+
 ### Clone Repository
 
 ```shell
