@@ -1,0 +1,13 @@
+{
+  "$id": "/api/game/:id",
+  "title": "Progress Game",
+  "description": "JSON Schema for Progress Game",
+  "type": "object",
+  "properties": {
+    "color": {
+      "type": "string"
+    }
+  },
+  "additionalProperties": false,
+  "required": ["color"]
+}

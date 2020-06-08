@@ -1,0 +1,57 @@
+.header {
+  margin: 50px auto;
+}
+body {
+  font-family: 'Titillium Web', sans-serif;
+  margin: 0;
+  background-image: url('../layout/background.png');
+  background-size: 70vw;
+}
+
+.user-history {
+  position: absolute;
+  top: 15%;
+  left: 25%;
+}
+
+.computer-history {
+  position: absolute;
+  top: 15%;
+  right: 25%;
+}
+
+.container {
+  text-align: center;
+  margin-top: 150px;
+}
+
+.select-input {
+  width: 10rem;
+  margin-top: 10px;
+}
+
+button {
+  margin: 5px !important;
+}
+
+.historyRow {
+  display: block;
+  height: 50px;
+  width: 140px;
+}
+
+.table {
+  margin: 0 auto;
+  border-collapse: collapse;
+  border: 1px solid #212121;
+  background-color: transparent;
+  border-spacing: 0;
+}
+
+.row {
+  height: 50px;
+  width: 50px;
+  color: transparent;
+  font-size: 60px;
+  border: 1px solid #212121;
+}
