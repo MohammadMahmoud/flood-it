@@ -62,12 +62,26 @@ const Layout = () => {
               setDisableGrid(true);
               clearInterval(computerSolveSteps);
             }
-            handleChooseColor(data.message.takenColors[count]);
+            fetchChangesBasedOnColor(data.message.takenColors[count]);
             count++;
-          }, 1000);
+          }, 500);
           setDisableSolveButton(true);
           setDisableNewGameButton(true);
         });
+  };
+
+  const fetchChangesBasedOnColor = (color: string) => {
+    fetch(`/api/game/${gameId}`, {
+      method: 'PUT',
+      headers: {
+        'Content-Type': 'application/json',
+      },
+      body: JSON.stringify({ color }),
+    })
+      .then((response) => response.json())
+      .then((data) => {
+        setGrid(data.message.nextGrid);
+      });
   };
 
   const handleChooseColor = (color: string, player?: boolean) => {
@@ -77,8 +91,9 @@ const Layout = () => {
     }
     if (player) {
       setPlayerMoves([...playerMoves, color]);
+      setPlayerTurns((playerTurns) => playerTurns + 1);
     }
-    if (playerTurns >= solvedTurns) {
+    if (playerTurns > solvedTurns) {
       window.alert(
         'You have beaten by computer :( , how about start new one? ;)'
       );
@@ -86,18 +101,7 @@ const Layout = () => {
       return false;
     }
     if (disableGrid === false) {
-      fetch(`/api/game/${gameId}`, {
-        method: 'PUT',
-        headers: {
-          'Content-Type': 'application/json',
-        },
-        body: JSON.stringify({ color }),
-      })
-        .then((response) => response.json())
-        .then((data) => {
-          setGrid(data.message.nextGrid);
-          setPlayerTurns(data.message.playerTurns);
-        });
+      fetchChangesBasedOnColor(color);
     } else {
       window.confirm(
         'You already solved the game, how about start new one? ;)'
